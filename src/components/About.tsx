@@ -5,25 +5,31 @@ import ScrollReveal from "./ScrollReveal";
 
 export default function About() {
   return (
-    <section className="relative w-full py-24 sm:py-32 px-6 sm:px-8 bg-neutral-950">
-      <div className="max-w-4xl mx-auto">
+    <section className="relative w-full py-24 sm:py-32 px-6 sm:px-8 bg-[--bg-primary]">
+      <div className="max-w-6xl mx-auto">
         <ScrollReveal direction="up">
-          <div className="space-y-12">
-            {/* Main About */}
-            <div className="space-y-6">
-              <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif font-light tracking-tight text-neutral-50">
+          <div className="space-y-16">
+            {/* Section Title */}
+            <div>
+              <div className="section-number">(04) About</div>
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif font-light tracking-tight text-[--text-primary] mb-6">
                 About
               </h2>
+              <div className="accent-divider" />
+            </div>
 
+            {/* Two-column layout */}
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
+              {/* Main text - wider column */}
               <motion.div
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
                 viewport={{ once: true }}
-                className="space-y-6 text-neutral-400 text-lg leading-relaxed font-light"
+                className="lg:col-span-2 space-y-6 text-[--text-secondary] text-lg leading-relaxed font-light"
               >
                 <p>
-                  I studied social psychology at Harvard—how people construct identity, perception, and narrative
+                  I studied social psychology at Harvard\u2014how people construct identity, perception, and narrative
                   about themselves. That shapes everything I do now. Before going independent, I spent nearly a
                   decade as COO at Growthink, where I oversaw two divisions, launched a data analytics practice
                   serving over 100 companies, and traveled nationally advising business leaders.
@@ -44,51 +50,65 @@ export default function About() {
                     href="https://drewbordeaux.substack.com"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-neutral-300 hover:text-neutral-100 underline underline-offset-2 transition-colors duration-300"
+                    className="text-[--accent-gold] hover:text-[--accent-copper] underline underline-offset-2 transition-colors duration-300"
                   >
                     Signal to Noise
                   </a>
-                  {" "}on Substack—essays on race, identity, and the systems that shape how we see each other.
+                  {" "}on Substack\u2014essays on race, identity, and the systems that shape how we see each other.
                 </p>
               </motion.div>
-            </div>
 
-            {/* Music / Credentials */}
-            <motion.div
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              transition={{ duration: 0.8, delay: 0.3 }}
-              viewport={{ once: true }}
-              className="border-t border-neutral-800 pt-12 space-y-6"
-            >
-              <h3 className="text-xl font-serif font-light tracking-tight text-neutral-50">
-                Music & Credentials
-              </h3>
+              {/* Credentials Card */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.3 }}
+                viewport={{ once: true }}
+                className="lg:col-span-1 border border-[--border] rounded-lg p-8 bg-[--bg-card] warm-glow h-fit"
+              >
+                <h3 className="text-lg font-serif font-light tracking-tight text-[--text-primary] mb-6">
+                  Music & Credentials
+                </h3>
 
-              <div className="space-y-4 text-neutral-400 text-base leading-relaxed font-light">
-                <p>
-                  <span className="text-neutral-300 font-light">Voting member of the Recording Academy.</span>{" "}
-                  Singer, songwriter, multi-instrumentalist, and producer working across rock, Americana, and
-                  soul—with over a thousand live performances across two decades, from venues like The Paramount
-                  and Tarrytown Music Hall to opening for Daughtry, KT Tunstall, The Gin Blossoms, and Boz Scaggs.
-                  Released Impulse/Instinct (2021) and produced Becki Davis&apos;s Lost and Found, which earned
-                  national radio play and year-end list recognition. The creative instincts that come from a
-                  lifetime of making music inform everything I build for clients.
-                </p>
+                <div className="space-y-6 text-[--text-secondary] text-sm leading-relaxed font-light">
+                  <div>
+                    <p className="text-[--accent-gold] font-light mb-2">
+                      Recording Academy
+                    </p>
+                    <p>
+                      Voting member. Singer, songwriter, multi-instrumentalist, and producer working across rock, Americana, and soul.
+                    </p>
+                  </div>
 
-                <p className="pt-4">
+                  <div className="border-t border-[--border] pt-4">
+                    <p className="text-[--accent-gold] font-light mb-2">
+                      Performance
+                    </p>
+                    <p>
+                      1000+ live performances. Opened for Daughtry, KT Tunstall, The Gin Blossoms, and Boz Scaggs.
+                    </p>
+                  </div>
+
+                  <div className="border-t border-[--border] pt-4">
+                    <p className="text-[--accent-gold] font-light mb-2">
+                      Releases
+                    </p>
+                    <p>
+                      <em>Impulse/Instinct</em> (2021). Produced Becki Davis&apos;s <em>Lost and Found</em>.
+                    </p>
+                  </div>
+
                   <a
                     href="https://suddenflightrecords.com"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-neutral-300 hover:text-neutral-100 underline underline-offset-2 transition-colors duration-300"
+                    className="block border-t border-[--border] pt-4 text-[--accent-gold] hover:text-[--accent-copper] underline underline-offset-2 transition-colors duration-300"
                   >
-                    Sudden Flight Records
+                    Sudden Flight Records \u2192
                   </a>
-                  {" "}is my music home. Check it out if you want to hear where the other half of my thinking comes from.
-                </p>
-              </div>
-            </motion.div>
+                </div>
+              </motion.div>
+            </div>
           </div>
         </ScrollReveal>
       </div>

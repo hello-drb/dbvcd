@@ -1,27 +1,27 @@
 import type { Metadata } from "next";
-import { Instrument_Serif, DM_Sans } from "next/font/google";
+import { Playfair_Display, Inter } from "next/font/google";
 import "./globals.css";
 
-const instrumentSerif = Instrument_Serif({
-  variable: "--font-instrument-serif",
-  weight: ["400"],
+const playfairDisplay = Playfair_Display({
+  variable: "--font-playfair-display",
+  weight: ["400", "500", "600", "700"],
   subsets: ["latin"],
   display: "swap",
 });
 
-const dmSans = DM_Sans({
-  variable: "--font-dm-sans",
-  weight: ["400", "500", "600"],
+const inter = Inter({
+  variable: "--font-inter",
+  weight: ["300", "400", "500", "600"],
   subsets: ["latin"],
   display: "swap",
 });
 
 export const metadata: Metadata = {
-  title: "Drew Bordeaux — Creative Director",
+  title: "Drew Bordeaux \u2014 Creative Director",
   description:
     "Creative direction for artists, brands, and the stories between. Photography, production, and hybrid filmmaking.",
   openGraph: {
-    title: "Drew Bordeaux — Creative Director",
+    title: "Drew Bordeaux \u2014 Creative Director",
     description:
       "Creative direction for artists, brands, and the stories between.",
     type: "website",
@@ -44,7 +44,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${instrumentSerif.variable} ${dmSans.variable} antialiased bg-neutral-950 text-neutral-50`}
+        className={`${playfairDisplay.variable} ${inter.variable} antialiased`}
       >
         {children}
       </body>

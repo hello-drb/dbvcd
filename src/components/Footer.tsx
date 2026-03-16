@@ -6,7 +6,7 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="relative w-full py-16 px-6 sm:px-8 border-t border-neutral-800 bg-neutral-950">
+    <footer className="relative w-full py-16 px-6 sm:px-8 border-t border-[--border] bg-[--bg-elevated]">
       <div className="max-w-6xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
           {/* Ecosystem */}
@@ -16,7 +16,7 @@ export default function Footer() {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <h3 className="text-sm font-light tracking-widest uppercase text-neutral-500 mb-4">
+            <h3 className="text-sm font-light tracking-widest uppercase text-[--text-muted] mb-4">
               Ecosystem
             </h3>
             <ul className="space-y-3">
@@ -25,7 +25,7 @@ export default function Footer() {
                   href="https://drewimages.studio"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-neutral-400 hover:text-neutral-100 transition-colors duration-300 font-light text-sm"
+                  className="text-[--text-secondary] hover:text-[--accent-gold] transition-colors duration-300 font-light text-sm"
                 >
                   DrewImages.Studio
                 </a>
@@ -35,7 +35,7 @@ export default function Footer() {
                   href="https://silverrushmedia.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-neutral-400 hover:text-neutral-100 transition-colors duration-300 font-light text-sm"
+                  className="text-[--text-secondary] hover:text-[--accent-gold] transition-colors duration-300 font-light text-sm"
                 >
                   SilverRushMedia.com
                 </a>
@@ -45,7 +45,7 @@ export default function Footer() {
                   href="https://suddenflightrecords.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-neutral-400 hover:text-neutral-100 transition-colors duration-300 font-light text-sm"
+                  className="text-[--text-secondary] hover:text-[--accent-gold] transition-colors duration-300 font-light text-sm"
                 >
                   SuddenFlightRecords.com
                 </a>
@@ -60,7 +60,7 @@ export default function Footer() {
             transition={{ duration: 0.8, delay: 0.1 }}
             viewport={{ once: true }}
           >
-            <h3 className="text-sm font-light tracking-widest uppercase text-neutral-500 mb-4">
+            <h3 className="text-sm font-light tracking-widest uppercase text-[--text-muted] mb-4">
               Connect
             </h3>
             <ul className="space-y-3">
@@ -69,7 +69,7 @@ export default function Footer() {
                   href="https://instagram.com/drewimages"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-neutral-400 hover:text-neutral-100 transition-colors duration-300 font-light text-sm"
+                  className="text-[--text-secondary] hover:text-[--accent-gold] transition-colors duration-300 font-light text-sm"
                 >
                   Instagram
                 </a>
@@ -79,7 +79,7 @@ export default function Footer() {
                   href="https://linkedin.com/in/drewbordeaux"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-neutral-400 hover:text-neutral-100 transition-colors duration-300 font-light text-sm"
+                  className="text-[--text-secondary] hover:text-[--accent-gold] transition-colors duration-300 font-light text-sm"
                 >
                   LinkedIn
                 </a>
@@ -89,7 +89,7 @@ export default function Footer() {
                   href="https://signaltonoise.substack.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-neutral-400 hover:text-neutral-100 transition-colors duration-300 font-light text-sm"
+                  className="text-[--text-secondary] hover:text-[--accent-gold] transition-colors duration-300 font-light text-sm"
                 >
                   Signal to Noise (Substack)
                 </a>
@@ -105,11 +105,11 @@ export default function Footer() {
             viewport={{ once: true }}
             className="flex flex-col"
           >
-            <h3 className="text-sm font-light tracking-widest uppercase text-neutral-500 mb-4">
+            <h3 className="text-sm font-light tracking-widest uppercase text-[--text-muted] mb-4">
               Info
             </h3>
-            <p className="text-neutral-400 font-light text-sm leading-relaxed">
-              © {currentYear} Silver Rush Productions LLC
+            <p className="text-[--text-secondary] font-light text-sm leading-relaxed">
+              \u00A9 {currentYear} Silver Rush Productions LLC
             </p>
           </motion.div>
         </div>
@@ -120,9 +120,9 @@ export default function Footer() {
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.3 }}
           viewport={{ once: true }}
-          className="border-t border-neutral-800 pt-8"
+          className="border-t border-[--border] pt-8"
         >
-          <p className="text-neutral-500 text-xs font-light tracking-widest text-center">
+          <p className="text-[--text-muted] text-xs font-light tracking-widest text-center">
             Crafted with intention. Built to last.
           </p>
         </motion.div>

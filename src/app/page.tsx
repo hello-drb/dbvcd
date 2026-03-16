@@ -9,7 +9,7 @@ import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
-    <main className="w-full bg-neutral-950 text-neutral-50">
+    <main className="w-full bg-[--bg-primary] text-[--text-primary]">
       <Hero />
       <TheWork />
       <Services />

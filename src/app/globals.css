@@ -2,18 +2,34 @@
 
 @layer base {
   :root {
-    --background: #0a0a0a;
-    --foreground: #f5f5f5;
-    --accent-gold: #d4a574;
-    --accent-warm: #8b7355;
+    /* Warm Dark Palette */
+    --bg-primary: #0D0C0B;
+    --bg-elevated: #1A1816;
+    --bg-card: #231F1B;
+    --text-primary: #F5F0EB;
+    --text-secondary: #A89F95;
+    --text-muted: #6B6560;
+    --accent-gold: #C9A96E;
+    --accent-copper: #B87333;
+    --accent-teal: #3A6B6B;
+    --border: #2A2520;
+    --border-hover: #3D352E;
   }
 
-  body {
-    @apply bg-neutral-950 text-neutral-50 scroll-smooth;
+  * {
+    @apply antialiased;
   }
 
   html {
     scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-[--bg-primary] text-[--text-primary] scroll-smooth;
+    /* Subtle film grain texture overlay */
+    background-image:
+      url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' seed='2' /%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23noiseFilter)' opacity='0.12'/%3E%3C/svg%3E");
+    background-attachment: fixed;
   }
 
   h1,
@@ -22,7 +38,8 @@
   h4,
   h5,
   h6 {
-    font-family: var(--font-instrument-serif);
+    font-family: var(--font-playfair-display);
+    font-weight: 400;
   }
 
   body,
@@ -30,15 +47,30 @@
   span,
   a,
   button {
-    font-family: var(--font-dm-sans);
+    font-family: var(--font-inter);
+  }
+
+  /* Section numbering styles */
+  .section-number {
+    @apply text-[--accent-gold] text-sm uppercase tracking-widest font-light mb-4;
+  }
+
+  /* Horizontal accent rule */
+  .accent-divider {
+    @apply w-12 h-1 bg-[--accent-gold] rounded-full;
+  }
+
+  /* Warm gold highlight for emphasis */
+  .text-emphasis {
+    @apply text-[--accent-gold] italic;
   }
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-serif: var(--font-instrument-serif);
-  --font-sans: var(--font-dm-sans);
+  --color-background: var(--bg-primary);
+  --color-foreground: var(--text-primary);
+  --font-serif: var(--font-playfair-display);
+  --font-sans: var(--font-inter);
 }
 
 /* Smooth fade animations */
@@ -73,6 +105,18 @@
   }
 }
 
+@keyframes shimmer {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
 .animate-fade-in {
   animation: fadeIn 0.8s ease-out;
 }
@@ -83,4 +127,19 @@
 
 .animate-fade-in-down {
   animation: fadeInDown 0.8s ease-out;
+}
+
+/* Warm glow effect for cards */
+.warm-glow {
+  transition: all 0.3s ease;
+}
+
+.warm-glow:hover {
+  box-shadow: 0 0 32px rgba(201, 169, 110, 0.15);
+  border-color: var(--border-hover);
+}
+
+/* Copper button style */
+.btn-copper {
+  @apply bg-[--accent-copper] text-white px-8 py-4 rounded-lg font-light tracking-wide transition-all duration-300 hover:opacity-90;
 }

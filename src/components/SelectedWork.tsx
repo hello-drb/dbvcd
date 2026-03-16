@@ -14,16 +14,17 @@ function WorkPiece({ name, role, outcome }: WorkPieceProps) {
     <motion.div
       whileHover={{ y: -4 }}
       transition={{ duration: 0.3, ease: [0.25, 0.46, 0.45, 0.94] }}
-      className="group border-b border-neutral-800 py-8 hover:border-neutral-700 transition-colors duration-300"
+      className="group border-b border-[--border] py-12 hover:border-[--border-hover] transition-colors duration-300"
     >
-      {/* Placeholder Image Area */}
-      <div className="mb-6 h-64 sm:h-80 bg-gradient-to-br from-neutral-900 to-neutral-800 rounded-lg overflow-hidden">
+      {/* Placeholder Image Area with warm overlay */}
+      <div className="mb-8 h-64 sm:h-80 bg-gradient-to-br from-[--bg-elevated] via-[--bg-card] to-[--bg-elevated] rounded-lg overflow-hidden relative">
+        <div className="absolute inset-0 bg-gradient-to-t from-[--accent-copper]/20 to-[--accent-gold]/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
         <div className="w-full h-full flex items-center justify-center">
           <div className="text-center">
-            <div className="text-neutral-600 text-sm font-light tracking-wide mb-2">
+            <div className="text-[--text-muted] text-sm font-light tracking-wide mb-2">
               Project Image
             </div>
-            <div className="w-16 h-16 rounded-full bg-neutral-700 mx-auto opacity-50" />
+            <div className="w-16 h-16 rounded-full bg-[--border] mx-auto opacity-50" />
           </div>
         </div>
       </div>
@@ -31,15 +32,15 @@ function WorkPiece({ name, role, outcome }: WorkPieceProps) {
       {/* Content */}
       <div className="space-y-4">
         <div>
-          <h3 className="text-2xl sm:text-3xl font-serif font-light text-neutral-50 mb-2">
+          <h3 className="text-2xl sm:text-3xl font-serif font-light text-[--text-primary] mb-2">
             {name}
           </h3>
-          <p className="text-neutral-500 text-sm font-light tracking-wide">
+          <p className="text-[--text-muted] text-sm font-light tracking-widest uppercase">
             {role}
           </p>
         </div>
 
-        <p className="text-neutral-400 leading-relaxed font-light text-base">
+        <p className="text-[--text-secondary] leading-relaxed font-light text-base">
           {outcome}
         </p>
       </div>
@@ -53,35 +54,45 @@ export default function SelectedWork() {
       name: "Nicole Zuraitis",
       role: "Photographer & Art Director",
       outcome:
-        "Photographic direction and art direction for likely Grammy-nominated album. Established the visual identity across all promotional materials, merch design, and social content. The work became the gold standard for how she presents herself to the industry.",
+        "Photography and art direction for Grammy Award\u2013winning vocalist and composer. Established the visual identity across album artwork, promotional materials, and social content\u2014the work that set the standard for how she presents herself to the industry.",
     },
     {
-      name: "Jazzmeia Horn",
-      role: "Art Director & Visual Strategy",
+      name: "Jessie Wagner",
+      role: "Creative Director & Photographer",
       outcome:
-        "Complete visual identity overhaul including album artwork, press kit design, and promotional photography. Created a cohesive visual language that strengthened her position in the jazz market.",
+        "Full creative direction and photography for Wicked Cool Records recording artist and songwriter. Album and single art, press kit, social content, and tour imagery\u2014building a cohesive visual world around her music.",
     },
     {
-      name: "Becki Howard",
-      role: "Photographer & Content Director",
+      name: "Romina Garber",
+      role: "Photographer & Visual Identity",
       outcome:
-        "Comprehensive photography and creative direction for brand positioning and social strategy. Developed an editorial voice that increased engagement and industry recognition.",
+        "Portrait and editorial photography for New York Times bestselling author. Created a visual identity that matched the depth and reach of her literary work\u2014images built for press, social, and publisher needs.",
     },
     {
-      name: "Lauren Desberg",
-      role: "Art Director & Production Lead",
+      name: "Talea Ensemble",
+      role: "Visual Identity & Group Portraits",
       outcome:
-        "Full production and art direction for visual content series. Managed all creative decisions from concept through final delivery, building a distinctive visual brand.",
+        "Visual identity system for classical chamber ensemble. Cohesive group portraits and individual member photography designed to elevate their presence across concert programs, press, and digital platforms.",
+    },
+    {
+      name: "Casey Baltes",
+      role: "Founder Portraits & Personal Branding",
+      outcome:
+        "Executive portraiture and personal branding for the VP of Games & Immersive at Tribeca Festival. Images built for clarity and confidence\u2014designed to live across speaking engagements, press, and leadership profiles.",
     },
   ];
 
   return (
-    <section className="relative w-full py-24 sm:py-32 px-6 sm:px-8 bg-neutral-950">
+    <section className="relative w-full py-24 sm:py-32 px-6 sm:px-8 bg-[--bg-primary]">
       <div className="max-w-4xl mx-auto">
         <ScrollReveal direction="up">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif font-light tracking-tight text-neutral-50 mb-16">
-            Selected Work
-          </h2>
+          <div className="mb-16">
+            <div className="section-number">(03) Selected Work</div>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif font-light tracking-tight text-[--text-primary] mb-6">
+              Selected Work
+            </h2>
+            <div className="accent-divider" />
+          </div>
         </ScrollReveal>
 
         <div className="space-y-0">
