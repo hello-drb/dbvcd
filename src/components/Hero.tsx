@@ -3,10 +3,19 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useEffect, useState } from "react";
 
-const cyclingTexts = [
-  "You wrote the song. Now let's build its world.",
-  "You launched the brand. Now let's give it a voice.",
-  "You started the movement. Now let's make it unforgettable.",
+const cyclingPhrases = [
+  "You wrote the song.",
+  "You wrote the book.",
+  "You started the company.",
+  "You gave the talk.",
+  "You got the gig.",
+  "You launched the brand.",
+  "You recorded the album.",
+  "You opened the restaurant.",
+  "You built the practice.",
+  "You designed the collection.",
+  "You booked the tour.",
+  "You started the movement.",
 ];
 
 export default function Hero() {
@@ -14,8 +23,8 @@ export default function Hero() {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentIndex((prev) => (prev + 1) % cyclingTexts.length);
-    }, 5000);
+      setCurrentIndex((prev) => (prev + 1) % cyclingPhrases.length);
+    }, 3000);
 
     return () => clearInterval(interval);
   }, []);
@@ -26,20 +35,30 @@ export default function Hero() {
       <div className="absolute inset-0 bg-gradient-to-b from-neutral-950 via-neutral-950 to-neutral-900 opacity-60" />
 
       <div className="relative z-10 max-w-4xl mx-auto px-6 sm:px-8 text-center">
-        {/* Main Cycling Heading */}
-        <div className="h-32 sm:h-40 mb-12 flex items-center justify-center">
-          <AnimatePresence mode="wait">
-            <motion.h1
-              key={currentIndex}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -20 }}
-              transition={{ duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] }}
-              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-serif font-light leading-tight tracking-tight text-neutral-50"
-            >
-              {cyclingTexts[currentIndex]}
-            </motion.h1>
-          </AnimatePresence>
+        {/* Cycling phrase + constant line */}
+        <div className="mb-12 flex flex-col items-center justify-center">
+          <div className="h-20 sm:h-24 md:h-28 flex items-center justify-center">
+            <AnimatePresence mode="wait">
+              <motion.span
+                key={currentIndex}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -20 }}
+                transition={{ duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94] }}
+                className="block text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-serif font-light leading-tight tracking-tight text-neutral-50"
+              >
+                {cyclingPhrases[currentIndex]}
+              </motion.span>
+            </AnimatePresence>
+          </div>
+          <motion.h1
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2, ease: [0.25, 0.46, 0.45, 0.94] }}
+            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-serif font-light leading-tight tracking-tight text-neutral-300"
+          >
+            Now let&apos;s build its world.
+          </motion.h1>
         </div>
 
         {/* Subtitle */}
