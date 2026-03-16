@@ -27,24 +27,26 @@ export default function TheWork() {
               className="space-y-6 text-neutral-400 text-lg leading-relaxed"
             >
               <p>
-                Photography built my eye. Twenty years behind the camera taught me how light, composition, and
-                timing create emotion. But I realized early: the best visual work isn't about the shot—it's about
-                the world around it.
+                I help artists and brands figure out who they are creatively—and then build the world around it.
+                For musicians, that means a full creative partnership across an album cycle: visual identity, art
+                direction, photography, production, and video. For businesses and founders, it&apos;s brand strategy,
+                positioning, photography, websites, and the digital presence that makes people take you seriously.
               </p>
 
               <p>
-                As a Creative Director, I build those worlds. I work with artists, labels, and brands who are ready
-                to stop making noise and start building something memorable. I handle the full scope: visual identity,
-                art direction, production design, and the hybrid filmmaking that lives between photos and motion.
+                The common thread is making sure what people see matches what you actually are. My work has been
+                featured in Vogue, Billboard, and Downbeat Magazine—collaborating with Grammy-winning artists,
+                independent musicians, authors, hospitality startups, and couture fashion ateliers alike.
               </p>
 
               <p>
-                I think like a filmmaker, see like a photographer, and build like someone who understands that
-                everything—the shoot, the edit, the layout—serves the story.
+                I run three practices under Silver Rush Productions: DrewImages.Studio for creative direction
+                and photography, Silver Rush Media for brand strategy and websites, and Sudden Flight Records
+                for music production and label services.
               </p>
 
               <p>
-                If you've got something that deserves to be unforgettable, let's build it.
+                If you&apos;re building something that deserves to be seen the right way, let&apos;s talk.
               </p>
             </motion.div>
           </div>
