@@ -2,7 +2,6 @@
 
 import { motion, useScroll, useMotionValueEvent } from "framer-motion";
 import { useState } from "react";
-import { IMAGES } from "@/lib/images";
 
 export default function Nav() {
   const [scrolled, setScrolled] = useState(false);
@@ -24,12 +23,8 @@ export default function Nav() {
       }`}
     >
       <div className="max-w-6xl mx-auto px-6 sm:px-8 flex items-center justify-between h-16">
-        <a href="#" className="flex items-center gap-3">
-          <img
-            src={IMAGES.LOGO}
-            alt="Drew Bordeaux"
-            className="h-6 opacity-90"
-          />
+        <a href="#" className="text-[--text-primary] text-sm font-light tracking-widest uppercase hover:text-[--accent-gold] transition-colors duration-300">
+          Drew Bordeaux
         </a>
 
         <div className="hidden sm:flex items-center gap-8">

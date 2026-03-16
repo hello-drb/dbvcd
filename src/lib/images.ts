@@ -9,12 +9,9 @@ function img(transforms: string, path: string) {
 }
 
 export const IMAGES = {
-  // HERO
-  HERO_BG: img("f_auto,q_auto,w_1920", "v1769319488/drew-12_nihwq7.jpg"),
-  HERO_BG_MOBILE: img("f_auto,q_auto,w_800", "v1769319488/drew-12_nihwq7.jpg"),
-
-  // LOGO
-  LOGO: img("f_auto,q_auto,h_32", "v1769361619/db_dbglogo_n93mqw.png"),
+  // HERO + PORTRAIT — SRM photo of Drew
+  HERO_BG: img("f_auto,q_auto,w_1920", "v1772570367/IMG_7292_awutou.jpg"),
+  HERO_BG_MOBILE: img("f_auto,q_auto,w_800", "v1772570367/IMG_7292_awutou.jpg"),
 
   // SELECTED WORK — Client portfolio images
   NICOLE_ZURAITIS: img("f_auto,q_auto,w_800,h_1000,c_fill,g_face", "v1768544915/nicole_z_jcf6o2.png"),
@@ -46,6 +43,6 @@ export const IMAGES = {
   IMPULSE_INSTINCT: img("f_auto,q_auto,w_300", "v1769320153/impulseInstinctcover_zpkz6x.jpg"),
   LOST_AND_FOUND: img("f_auto,q_auto,w_300", "v1769329708/lostandfoundcover_orff3l.png"),
 
-  // ABOUT — reuse hero or a different portrait
-  ABOUT_PORTRAIT: img("f_auto,q_auto,w_600,h_750,c_fill,g_face", "v1769319488/drew-12_nihwq7.jpg"),
+  // ABOUT — SRM portrait
+  ABOUT_PORTRAIT: img("f_auto,q_auto,w_600,h_750,c_fill,g_face", "v1772570367/IMG_7292_awutou.jpg"),
 };

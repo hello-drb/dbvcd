@@ -15,9 +15,8 @@ export default function TheWork() {
               <div>
                 <div className="section-number">(01) The Work</div>
                 <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif font-light tracking-tight text-[--text-primary] mb-6">
-                  You know me for photos.
-                  <br />
-                  <span className="text-[--text-secondary]">Here&apos;s the full picture.</span>
+                  Creative direction, brand strategy, and the
+                  <span className="text-[--accent-gold]"> visual world</span> around it.
                 </h2>
                 <div className="accent-divider" />
               </div>
@@ -30,17 +29,28 @@ export default function TheWork() {
                 className="space-y-5 text-[--text-secondary] text-lg leading-relaxed font-light"
               >
                 <p>
-                  I help artists and brands figure out who they are creatively&mdash;and then build the world around it.
-                  Visual identity, art direction, photography, production, and video. The common thread is making sure
-                  what people see matches what you actually are.
+                  I work with artists, founders, and brands to make sure the world sees them as clearly as they
+                  see themselves. That means photography, visual identity, websites, art direction, production&mdash;whatever
+                  it takes to close the gap between who you are and how you show up.
                 </p>
 
-                <p>
-                  Three practices under Silver Rush Productions:{" "}
-                  <a href="https://drewimages.studio" target="_blank" rel="noopener noreferrer" className="text-[--accent-gold] hover:text-[--accent-copper] transition-colors">DrewImages.Studio</a> for creative direction and photography,{" "}
-                  <a href="https://silverrushmedia.com" target="_blank" rel="noopener noreferrer" className="text-[--accent-gold] hover:text-[--accent-copper] transition-colors">Silver Rush Media</a> for brand strategy and websites, and{" "}
-                  <a href="https://suddenflightrecords.com" target="_blank" rel="noopener noreferrer" className="text-[--accent-gold] hover:text-[--accent-copper] transition-colors">Sudden Flight Records</a> for music production and label services.
-                </p>
+                <div className="flex flex-col gap-3 pt-2">
+                  <a href="https://drewimages.studio" target="_blank" rel="noopener noreferrer" className="text-[--text-primary] hover:text-[--accent-gold] transition-colors group">
+                    <span className="text-[--accent-gold] mr-2">&rarr;</span>
+                    DrewImages.Studio
+                    <span className="text-[--text-muted] ml-2 text-sm">Creative direction & photography</span>
+                  </a>
+                  <a href="https://silverrushmedia.com" target="_blank" rel="noopener noreferrer" className="text-[--text-primary] hover:text-[--accent-gold] transition-colors group">
+                    <span className="text-[--accent-gold] mr-2">&rarr;</span>
+                    Silver Rush Media
+                    <span className="text-[--text-muted] ml-2 text-sm">Brand strategy & websites</span>
+                  </a>
+                  <a href="https://suddenflightrecords.com" target="_blank" rel="noopener noreferrer" className="text-[--text-primary] hover:text-[--accent-gold] transition-colors group">
+                    <span className="text-[--accent-gold] mr-2">&rarr;</span>
+                    Sudden Flight Records
+                    <span className="text-[--text-muted] ml-2 text-sm">Music production & label services</span>
+                  </a>
+                </div>
               </motion.div>
             </div>
 
@@ -55,7 +65,7 @@ export default function TheWork() {
               <div className="grid grid-cols-2 gap-3">
                 <div className="space-y-3">
                   <div className="rounded-lg overflow-hidden aspect-[3/4]">
-                    <img src={IMAGES.CYRILLE} alt="Cyrille Aimée" className="w-full h-full object-cover" loading="lazy" />
+                    <img src={IMAGES.CYRILLE} alt="Cyrille Aim\u00E9e" className="w-full h-full object-cover" loading="lazy" />
                   </div>
                   <div className="rounded-lg overflow-hidden aspect-square">
                     <img src={IMAGES.SASHA_ONO} alt="Sasha Ono" className="w-full h-full object-cover" loading="lazy" />
