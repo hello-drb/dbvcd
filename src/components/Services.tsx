@@ -15,15 +15,14 @@ function ServiceCard({ title, description, number, isLeading = false }: ServiceP
     <motion.div
       whileHover={{ y: -8 }}
       transition={{ duration: 0.3, ease: [0.25, 0.46, 0.45, 0.94] }}
-      className={`group relative border border-[--border] rounded-lg p-8 backdrop-blur-sm transition-all duration-300 warm-glow ${
+      className={`group relative border border-[--border] rounded-lg p-8 sm:p-10 backdrop-blur-sm transition-all duration-300 warm-glow ${
         isLeading ? "col-span-1 md:col-span-2 lg:col-span-3 bg-gradient-to-r from-[--bg-card] to-[--bg-elevated]" : "bg-[--bg-card]"
       }`}
     >
-      {/* Warm glow effect on hover */}
       <div className="absolute inset-0 bg-gradient-to-r from-[--accent-gold]/0 via-[--accent-gold]/0 to-[--accent-gold]/0 group-hover:from-[--accent-gold]/10 group-hover:via-[--accent-gold]/5 group-hover:to-[--accent-gold]/10 rounded-lg transition-all duration-500" />
 
       <div className="relative z-10">
-        <div className="flex items-start justify-between mb-4">
+        <div className="flex items-start justify-between mb-5">
           <motion.h3
             className={`font-serif font-light tracking-tight text-[--text-primary] ${
               isLeading ? "text-3xl sm:text-4xl" : "text-2xl"
@@ -49,35 +48,35 @@ export default function Services() {
     {
       title: "Creative Direction",
       description:
-        "The umbrella that holds everything together. I guide the visual and conceptual strategy across all your projects—from album rollouts to brand launches. Art direction, conceptualization, and the decision-making that makes everything work in concert.",
+        "Strategic and visual identity work that defines your next chapter. Through structured sessions, I build the creative framework\u2014mood boards, visual direction, positioning, art direction\u2014that makes everything downstream more intentional. For artists releasing music, authors launching books, and brands in transition. Offerings range from a focused strategy session to a full creative partnership through your release.",
       number: "01",
       isLeading: true,
     },
     {
       title: "Photography",
       description:
-        "Portraits, editorial, product, and lifestyle imagery that doesn't just look good—it tells the story you're building. Technical precision meets emotional depth.",
+        "Portraits, editorial, product, and lifestyle imagery that tells the story you\u2019re building. Whether it\u2019s a natural light session in Westchester or a full studio production in the city, every image is designed to serve your brand for years\u2014not just a post.",
       number: "02",
     },
     {
-      title: "Production",
+      title: "Music Production",
       description:
-        "Overseeing the full production ecosystem. Locations, budgets, crew, logistics—the orchestration that lets creative vision become reality on set and beyond.",
+        "Full album production, singles, and sonic identity development. From demo to master, with the ear of a lifelong multi-instrumentalist and the strategic mind of a creative director. Recent work: produced Becki Davis\u2019s Lost and Found\u2014Folk radio play, Top 30 year-end lists.",
       number: "03",
     },
     {
       title: "Hybrid Filmmaking",
       description:
-        "The space between stills and motion. Short-form films, music videos, behind-the-scenes content, and cinematic reels that move the work forward.",
+        "The space between stills and motion. Short-form films, music videos, behind-the-scenes content, and cinematic reels that move the work forward. Recent work includes directing You See Me, a 22-minute episodic pilot with a cast and crew of 14, and The Good Ones, a short film currently in production exploring race and technology.",
       number: "04",
     },
   ];
 
   return (
-    <section id="services" className="relative w-full py-24 sm:py-32 px-6 sm:px-8 bg-[--bg-primary]">
+    <section id="services" className="relative w-full py-28 sm:py-40 px-6 sm:px-8 bg-[--bg-primary]">
       <div className="max-w-6xl mx-auto">
         <ScrollReveal direction="up">
-          <div className="mb-16">
+          <div className="mb-20">
             <div className="section-number">(02) Services</div>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif font-light tracking-tight text-[--text-primary] mb-6">
               What I Build

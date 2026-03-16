@@ -19,6 +19,8 @@ export const IMAGES = {
   ROMINA_GARBER: img("f_auto,q_auto,w_800,h_1000,c_fill,g_face", "v1768543350/romina_russell_gk2ez4.png"),
   TALEA_ENSEMBLE: img("f_auto,q_auto,w_800,h_1000,c_fill,g_face", "v1768407508/talea_group_uwwomc.png"),
   CASEY_BALTES: img("f_auto,q_auto,w_800,h_1000,c_fill,g_face", "v1768418364/CASEY_1_wq0vo5.jpg"),
+  JAZZMEIA_HORN: img("f_auto,q_auto,w_800,h_1000,c_fill,g_face", "v1768230325/jazzmeia_wide_ieefeg.png"),
+  BECKI_DAVIS: img("f_auto,q_auto,w_800,h_1000,c_fill", "v1769329708/lostandfoundcover_orff3l.png"),
 
   // AMBIENT / ADDITIONAL PORTFOLIO
   CYRILLE: img("f_auto,q_auto,w_600", "v1768230293/Cyrille_Green_ug4lzg.png"),

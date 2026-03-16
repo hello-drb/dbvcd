@@ -86,7 +86,7 @@ export default function Footer() {
               </li>
               <li>
                 <a
-                  href="https://signaltonoise.substack.com"
+                  href="https://drewbordeaux.substack.com"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-[--text-secondary] hover:text-[--accent-gold] transition-colors duration-300 font-light text-sm"
@@ -109,7 +109,7 @@ export default function Footer() {
               Info
             </h3>
             <p className="text-[--text-secondary] font-light text-sm leading-relaxed">
-              \u00A9 {currentYear} Silver Rush Productions LLC
+              \u00a9 {currentYear} Silver Rush Productions LLC
             </p>
           </motion.div>
         </div>

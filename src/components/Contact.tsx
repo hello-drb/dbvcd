@@ -54,6 +54,15 @@ export default function Contact() {
               >
                 Instagram
               </a>
+
+              <a
+                href="https://linkedin.com/in/drewbordeaux"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group relative inline-flex items-center justify-center px-10 py-4 rounded-lg border border-[--border] text-[--text-secondary] font-light tracking-wide transition-all duration-300 hover:border-[--accent-gold] hover:text-[--accent-gold]"
+              >
+                LinkedIn
+              </a>
             </motion.div>
           </div>
         </ScrollReveal>

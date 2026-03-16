@@ -5,6 +5,7 @@ import PressLogos from "@/components/PressLogos";
 import Services from "@/components/Services";
 import SelectedWork from "@/components/SelectedWork";
 import Testimonial from "@/components/Testimonial";
+import MidCTA from "@/components/MidCTA";
 import About from "@/components/About";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
@@ -19,6 +20,7 @@ export default function Home() {
       <Services />
       <SelectedWork />
       <Testimonial />
+      <MidCTA />
       <About />
       <Contact />
       <Footer />
