@@ -2,6 +2,7 @@
 
 import { motion, AnimatePresence } from "framer-motion";
 import { useEffect, useState } from "react";
+import { IMAGES } from "@/lib/images";
 
 const cyclingPhrases = [
   "You wrote the song.",
@@ -30,13 +31,22 @@ export default function Hero() {
   }, []);
 
   return (
-    <section className="relative h-screen w-full flex items-center overflow-hidden bg-[--bg-primary]">
-      {/* Subtle background gradient */}
-      <div className="absolute inset-0 bg-gradient-to-br from-[--bg-primary] via-[--bg-elevated] to-[--bg-primary] opacity-40" />
+    <section className="relative h-screen w-full flex items-center overflow-hidden">
+      {/* Background Image */}
+      <div className="absolute inset-0">
+        <img
+          src={IMAGES.HERO_BG}
+          alt=""
+          className="w-full h-full object-cover object-center"
+        />
+        {/* Gradient overlays for text readability */}
+        <div className="absolute inset-0 bg-gradient-to-r from-[--bg-primary]/95 via-[--bg-primary]/70 to-[--bg-primary]/30" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[--bg-primary]/80 via-transparent to-[--bg-primary]/20" />
+      </div>
 
       <div className="relative z-10 w-full max-w-6xl mx-auto px-6 sm:px-8 lg:px-12">
-        <div className="space-y-8">
-          {/* Left-aligned, dramatic cycling phrase */}
+        <div className="space-y-8 max-w-3xl">
+          {/* Cycling phrase */}
           <div className="space-y-4">
             <div className="h-24 sm:h-32 md:h-40 lg:h-48 flex items-start justify-start">
               <AnimatePresence mode="wait">
@@ -46,14 +56,13 @@ export default function Hero() {
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -20 }}
                   transition={{ duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94] }}
-                  className="block text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-serif font-light leading-tight tracking-tight text-[--text-primary]"
+                  className="block text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-serif font-light leading-tight tracking-tight text-white drop-shadow-lg"
                 >
                   {cyclingPhrases[currentIndex]}
                 </motion.span>
               </AnimatePresence>
             </div>
 
-            {/* Decorative accent line */}
             <motion.div
               initial={{ width: 0 }}
               animate={{ width: 48 }}
@@ -62,35 +71,25 @@ export default function Hero() {
             />
           </div>
 
-          {/* Subtle constant line below */}
+          {/* Constant tagline */}
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2, ease: [0.25, 0.46, 0.45, 0.94] }}
-            className="text-lg sm:text-xl md:text-2xl font-light leading-relaxed tracking-wide text-[--accent-gold] max-w-2xl"
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="text-lg sm:text-xl md:text-2xl font-light leading-relaxed tracking-wide text-[--accent-gold]"
           >
             Now let&apos;s build its world.
           </motion.h1>
         </div>
 
-        {/* Subtitle */}
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.4, ease: [0.25, 0.46, 0.45, 0.94] }}
-          className="text-base sm:text-lg text-[--text-secondary] mt-16 font-light tracking-wide max-w-2xl"
-        >
-          Creative Direction for artists, brands, and the stories between.
-        </motion.p>
-
         {/* Scroll Indicator */}
         <motion.div
           animate={{ y: [0, 12, 0] }}
           transition={{ duration: 2, repeat: Infinity }}
-          className="flex justify-start pt-20"
+          className="flex justify-start pt-24"
         >
           <svg
-            className="w-6 h-6 text-[--accent-gold]"
+            className="w-5 h-5 text-[--accent-gold] opacity-60"
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"

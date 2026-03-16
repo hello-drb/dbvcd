@@ -5,7 +5,7 @@ import ScrollReveal from "./ScrollReveal";
 
 export default function Contact() {
   return (
-    <section className="relative w-full py-32 sm:py-48 px-6 sm:px-8 bg-gradient-to-r from-[--bg-elevated] via-[--bg-primary] to-[--bg-elevated] overflow-hidden">
+    <section id="contact" className="relative w-full py-32 sm:py-48 px-6 sm:px-8 bg-gradient-to-r from-[--bg-elevated] via-[--bg-primary] to-[--bg-elevated] overflow-hidden">
       {/* Decorative gradient overlay */}
       <div className="absolute inset-0 bg-gradient-to-t from-[--accent-gold]/5 to-transparent opacity-50" />
 

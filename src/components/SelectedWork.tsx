@@ -2,46 +2,44 @@
 
 import { motion } from "framer-motion";
 import ScrollReveal from "./ScrollReveal";
+import { IMAGES } from "@/lib/images";
 
 interface WorkPieceProps {
   name: string;
   role: string;
-  outcome: string;
+  description: string;
+  image: string;
+  reversed?: boolean;
 }
 
-function WorkPiece({ name, role, outcome }: WorkPieceProps) {
+function WorkPiece({ name, role, description, image, reversed = false }: WorkPieceProps) {
   return (
     <motion.div
-      whileHover={{ y: -4 }}
-      transition={{ duration: 0.3, ease: [0.25, 0.46, 0.45, 0.94] }}
-      className="group border-b border-[--border] py-12 hover:border-[--border-hover] transition-colors duration-300"
+      className={`group grid grid-cols-1 md:grid-cols-2 gap-0 md:gap-8 items-center ${
+        reversed ? "md:direction-rtl" : ""
+      }`}
     >
-      {/* Placeholder Image Area with warm overlay */}
-      <div className="mb-8 h-64 sm:h-80 bg-gradient-to-br from-[--bg-elevated] via-[--bg-card] to-[--bg-elevated] rounded-lg overflow-hidden relative">
-        <div className="absolute inset-0 bg-gradient-to-t from-[--accent-copper]/20 to-[--accent-gold]/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-        <div className="w-full h-full flex items-center justify-center">
-          <div className="text-center">
-            <div className="text-[--text-muted] text-sm font-light tracking-wide mb-2">
-              Project Image
-            </div>
-            <div className="w-16 h-16 rounded-full bg-[--border] mx-auto opacity-50" />
-          </div>
-        </div>
+      {/* Image */}
+      <div className={`relative overflow-hidden rounded-lg aspect-[4/5] ${reversed ? "md:order-2" : ""}`}>
+        <img
+          src={image}
+          alt={name}
+          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+          loading="lazy"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-[--bg-primary]/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
       </div>
 
       {/* Content */}
-      <div className="space-y-4">
-        <div>
-          <h3 className="text-2xl sm:text-3xl font-serif font-light text-[--text-primary] mb-2">
-            {name}
-          </h3>
-          <p className="text-[--text-muted] text-sm font-light tracking-widest uppercase">
-            {role}
-          </p>
-        </div>
-
-        <p className="text-[--text-secondary] leading-relaxed font-light text-base">
-          {outcome}
+      <div className={`py-8 md:py-0 space-y-4 ${reversed ? "md:order-1 md:text-right" : ""}`}>
+        <p className="text-[--accent-gold] text-sm font-light tracking-widest uppercase">
+          {role}
+        </p>
+        <h3 className="text-3xl sm:text-4xl font-serif font-light text-[--text-primary]">
+          {name}
+        </h3>
+        <p className="text-[--text-secondary] leading-relaxed font-light text-base max-w-md">
+          {description}
         </p>
       </div>
     </motion.div>
@@ -49,44 +47,46 @@ function WorkPiece({ name, role, outcome }: WorkPieceProps) {
 }
 
 export default function SelectedWork() {
-  const workPieces: WorkPieceProps[] = [
+  const workPieces = [
     {
       name: "Nicole Zuraitis",
-      role: "Photographer & Art Director",
-      outcome:
-        "Photography and art direction for Grammy Award\u2013winning vocalist and composer. Established the visual identity across album artwork, promotional materials, and social content\u2014the work that set the standard for how she presents herself to the industry.",
+      role: "Photography & Art Direction",
+      description: "Visual identity for Grammy Award–winning vocalist. Album artwork, press, and the images that set the standard for how she presents to the industry.",
+      image: IMAGES.NICOLE_ZURAITIS,
     },
     {
       name: "Jessie Wagner",
-      role: "Creative Director & Photographer",
-      outcome:
-        "Full creative direction and photography for Wicked Cool Records recording artist and songwriter. Album and single art, press kit, social content, and tour imagery\u2014building a cohesive visual world around her music.",
+      role: "Creative Direction",
+      description: "Full creative direction for Wicked Cool Records recording artist. Album art, press kit, social content, and tour imagery—one cohesive visual world.",
+      image: IMAGES.JESSIE_WAGNER,
+      reversed: true,
     },
     {
       name: "Romina Garber",
-      role: "Photographer & Visual Identity",
-      outcome:
-        "Portrait and editorial photography for New York Times bestselling author. Created a visual identity that matched the depth and reach of her literary work\u2014images built for press, social, and publisher needs.",
+      role: "Portrait & Editorial",
+      description: "Portraits for New York Times bestselling author. Images built for press, social, and publisher needs that match the depth of her literary work.",
+      image: IMAGES.ROMINA_GARBER,
     },
     {
       name: "Talea Ensemble",
-      role: "Visual Identity & Group Portraits",
-      outcome:
-        "Visual identity system for classical chamber ensemble. Cohesive group portraits and individual member photography designed to elevate their presence across concert programs, press, and digital platforms.",
+      role: "Visual Identity",
+      description: "Group portraits and visual identity for classical chamber ensemble. Designed to elevate their presence across concert programs, press, and digital platforms.",
+      image: IMAGES.TALEA_ENSEMBLE,
+      reversed: true,
     },
     {
       name: "Casey Baltes",
-      role: "Founder Portraits & Personal Branding",
-      outcome:
-        "Executive portraiture and personal branding for the VP of Games & Immersive at Tribeca Festival. Images built for clarity and confidence\u2014designed to live across speaking engagements, press, and leadership profiles.",
+      role: "Executive Portraits",
+      description: "Portraiture and personal branding for the VP of Games & Immersive at Tribeca Festival. Clarity and confidence for speaking engagements and leadership profiles.",
+      image: IMAGES.CASEY_BALTES,
     },
   ];
 
   return (
-    <section className="relative w-full py-24 sm:py-32 px-6 sm:px-8 bg-[--bg-primary]">
-      <div className="max-w-4xl mx-auto">
+    <section id="work" className="relative w-full py-24 sm:py-32 px-6 sm:px-8 bg-[--bg-primary]">
+      <div className="max-w-5xl mx-auto">
         <ScrollReveal direction="up">
-          <div className="mb-16">
+          <div className="mb-20">
             <div className="section-number">(03) Selected Work</div>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif font-light tracking-tight text-[--text-primary] mb-6">
               Selected Work
@@ -95,13 +95,15 @@ export default function SelectedWork() {
           </div>
         </ScrollReveal>
 
-        <div className="space-y-0">
+        <div className="space-y-24 sm:space-y-32">
           {workPieces.map((piece, index) => (
-            <ScrollReveal key={index} direction="up" delay={index * 0.1}>
+            <ScrollReveal key={index} direction="up" delay={0.1}>
               <WorkPiece
                 name={piece.name}
                 role={piece.role}
-                outcome={piece.outcome}
+                description={piece.description}
+                image={piece.image}
+                reversed={piece.reversed}
               />
             </ScrollReveal>
           ))}

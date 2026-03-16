@@ -2,22 +2,32 @@
 
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
+import { IMAGES } from "@/lib/images";
 
 const testimonials = [
   {
-    quote:
-      "Drew doesn't just take photos \u2014 he builds worlds. Working with him transformed how we present ourselves to the industry.",
-    author: "Music Industry Director",
+    quote: "Drew has an extraordinary ability to make you feel at ease — confident, supported, and beautifully directed.",
+    detail: "I walked away with the best photos I've ever had of myself.",
+    author: "Sophie M.",
+    avatar: IMAGES.SOPHIE,
   },
   {
-    quote:
-      "The difference between what we did before and after Drew's direction was night and day. He elevated everything.",
-    author: "Artist Manager",
+    quote: "The way Drew captures light, energy, and presence is unlike any experience I've had with another photographer.",
+    detail: "From the first shoot, I knew I was in the right hands.",
+    author: "Taylor Z.",
+    avatar: IMAGES.TAYLOR,
   },
   {
-    quote:
-      "He thinks in systems. Every creative decision serves the larger vision. That's rare.",
-    author: "Creative Collaborator",
+    quote: "Drew creates an environment that feels relaxed, collaborative, and genuinely comfortable.",
+    detail: "Even when I usually feel awkward on camera, I felt confident sharing ideas and being myself.",
+    author: "Gracie T.",
+    avatar: IMAGES.GRACIE,
+  },
+  {
+    quote: "Drew is a kind soul with a sharp eye. The photography is handled with care, talent, and skill.",
+    detail: "His direction and feedback make the time feel well spent and truly enjoyable.",
+    author: "Alecia C.",
+    avatar: IMAGES.ALECIA,
   },
 ];
 
@@ -33,21 +43,21 @@ export default function Testimonial() {
   }, []);
 
   return (
-    <section className="relative w-full py-24 sm:py-32 px-6 sm:px-8 bg-[--bg-primary]">
+    <section className="relative w-full py-24 sm:py-32 px-6 sm:px-8 bg-[--bg-elevated]">
       <div className="max-w-3xl mx-auto">
         <div className="relative">
-          {/* Warm gold quotation mark */}
+          {/* Gold quotation mark */}
           <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="text-7xl sm:text-8xl text-[--accent-gold] leading-none mb-8 font-serif opacity-40"
+            className="text-7xl sm:text-8xl text-[--accent-gold] leading-none mb-8 font-serif opacity-30"
           >
-            \u201C
+            &ldquo;
           </motion.div>
 
-          <div className="h-48 sm:h-64 flex items-center justify-center">
+          <div className="min-h-[280px] sm:min-h-[320px] flex items-start">
             <AnimatePresence mode="wait">
               <motion.div
                 key={currentIndex}
@@ -58,14 +68,25 @@ export default function Testimonial() {
                 className="space-y-6"
               >
                 <blockquote>
-                  <p className="text-2xl sm:text-3xl md:text-4xl font-serif italic font-light leading-tight text-[--text-primary]">
+                  <p className="text-2xl sm:text-3xl md:text-4xl font-serif italic font-light leading-snug text-[--text-primary]">
                     {testimonials[currentIndex].quote}
+                  </p>
+                  <p className="text-lg sm:text-xl font-serif italic font-light leading-snug text-[--text-secondary] mt-4">
+                    {testimonials[currentIndex].detail}
                   </p>
                 </blockquote>
 
-                <p className="text-[--text-muted] font-light tracking-widest text-sm uppercase">
-                  \u2014 {testimonials[currentIndex].author}
-                </p>
+                <div className="flex items-center gap-4 pt-4">
+                  <img
+                    src={testimonials[currentIndex].avatar}
+                    alt={testimonials[currentIndex].author}
+                    className="w-12 h-12 rounded-full object-cover border border-[--border]"
+                    loading="lazy"
+                  />
+                  <p className="text-[--text-muted] font-light tracking-widest text-sm uppercase">
+                    {testimonials[currentIndex].author}
+                  </p>
+                </div>
               </motion.div>
             </AnimatePresence>
           </div>
@@ -76,10 +97,10 @@ export default function Testimonial() {
               <motion.button
                 key={index}
                 onClick={() => setCurrentIndex(index)}
-                className={`transition-all duration-300 ${
+                className={`transition-all duration-300 rounded-full ${
                   index === currentIndex
-                    ? "w-8 h-1 bg-[--accent-gold]"
-                    : "w-4 h-1 bg-[--border]"
+                    ? "w-8 h-1.5 bg-[--accent-gold]"
+                    : "w-4 h-1.5 bg-[--border] hover:bg-[--border-hover]"
                 }`}
                 aria-label={`Go to testimonial ${index + 1}`}
               />

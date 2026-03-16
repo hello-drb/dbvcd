@@ -49,20 +49,20 @@ export default function Services() {
     {
       title: "Creative Direction",
       description:
-        "The umbrella that holds everything together. I guide the visual and conceptual strategy across all your projects\u2014from album rollouts to brand launches. Art direction, conceptualization, and the decision-making that makes everything work in concert.",
+        "The umbrella that holds everything together. I guide the visual and conceptual strategy across all your projects—from album rollouts to brand launches. Art direction, conceptualization, and the decision-making that makes everything work in concert.",
       number: "01",
       isLeading: true,
     },
     {
       title: "Photography",
       description:
-        "Portraits, editorial, product, and lifestyle imagery that doesn't just look good\u2014it tells the story you're building. Technical precision meets emotional depth.",
+        "Portraits, editorial, product, and lifestyle imagery that doesn't just look good—it tells the story you're building. Technical precision meets emotional depth.",
       number: "02",
     },
     {
       title: "Production",
       description:
-        "Overseeing the full production ecosystem. Locations, budgets, crew, logistics\u2014the orchestration that lets creative vision become reality on set and beyond.",
+        "Overseeing the full production ecosystem. Locations, budgets, crew, logistics—the orchestration that lets creative vision become reality on set and beyond.",
       number: "03",
     },
     {
@@ -74,11 +74,11 @@ export default function Services() {
   ];
 
   return (
-    <section className="relative w-full py-24 sm:py-32 px-6 sm:px-8 bg-[--bg-primary]">
+    <section id="services" className="relative w-full py-24 sm:py-32 px-6 sm:px-8 bg-[--bg-primary]">
       <div className="max-w-6xl mx-auto">
         <ScrollReveal direction="up">
           <div className="mb-16">
-            <div className="section-number">(02) What I Build</div>
+            <div className="section-number">(02) Services</div>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif font-light tracking-tight text-[--text-primary] mb-6">
               What I Build
             </h2>
