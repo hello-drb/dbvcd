@@ -6,28 +6,25 @@ import { IMAGES } from "@/lib/images";
 
 const testimonials = [
   {
-    quote: "Drew has an extraordinary ability to make you feel at ease — confident, supported, and beautifully directed.",
-    detail: "I walked away with the best photos I've ever had of myself.",
-    author: "Sophie M.",
-    avatar: IMAGES.SOPHIE,
+    quote: "Drew didn\u2019t just build a website for me \u2014 he helped shape the visual identity and voice of my brand from the ground up.",
+    detail: "He consistently encouraged me to stretch beyond my comfort zone and share my voice more boldly than I might have on my own.",
+    author: "Pam Hervey",
+    title: "Founder, Pamela Hervey Wellness",
+    avatar: null,
   },
   {
-    quote: "The way Drew captures light, energy, and presence is unlike any experience I've had with another photographer.",
-    detail: "From the first shoot, I knew I was in the right hands.",
-    author: "Taylor Z.",
-    avatar: IMAGES.TAYLOR,
+    quote: "Drew has an extraordinary ability to make you feel at ease \u2014 confident, supported, and beautifully directed.",
+    detail: "I walked away with the best photos I\u2019ve ever had of myself.",
+    author: "Sophie M.",
+    title: null,
+    avatar: IMAGES.SOPHIE,
   },
   {
     quote: "Drew creates an environment that feels relaxed, collaborative, and genuinely comfortable.",
     detail: "Even when I usually feel awkward on camera, I felt confident sharing ideas and being myself.",
     author: "Gracie T.",
+    title: null,
     avatar: IMAGES.GRACIE,
-  },
-  {
-    quote: "Drew is a kind soul with a sharp eye. The photography is handled with care, talent, and skill.",
-    detail: "His direction and feedback make the time feel well spent and truly enjoyable.",
-    author: "Alecia C.",
-    avatar: IMAGES.ALECIA,
   },
 ];
 
@@ -77,15 +74,24 @@ export default function Testimonial() {
                 </blockquote>
 
                 <div className="flex items-center gap-4 pt-4">
-                  <img
-                    src={testimonials[currentIndex].avatar}
-                    alt={testimonials[currentIndex].author}
-                    className="w-12 h-12 rounded-full object-cover border border-[var(--border)]"
-                    loading="lazy"
-                  />
-                  <p className="text-[var(--text-muted)] font-light tracking-widest text-sm uppercase">
-                    {testimonials[currentIndex].author}
-                  </p>
+                  {testimonials[currentIndex].avatar && (
+                    <img
+                      src={testimonials[currentIndex].avatar}
+                      alt={testimonials[currentIndex].author}
+                      className="w-12 h-12 rounded-full object-cover border border-[var(--border)]"
+                      loading="lazy"
+                    />
+                  )}
+                  <div>
+                    <p className="text-[var(--text-muted)] font-light tracking-widest text-sm uppercase">
+                      {testimonials[currentIndex].author}
+                    </p>
+                    {testimonials[currentIndex].title && (
+                      <p className="text-[var(--text-muted)] font-light text-xs mt-1 opacity-70">
+                        {testimonials[currentIndex].title}
+                      </p>
+                    )}
+                  </div>
                 </div>
               </motion.div>
             </AnimatePresence>

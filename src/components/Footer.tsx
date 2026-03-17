@@ -17,7 +17,7 @@ export default function Footer() {
             viewport={{ once: true }}
           >
             <h3 className="text-sm font-light tracking-widest uppercase text-[var(--text-muted)] mb-4">
-              Ecosystem
+              Practices
             </h3>
             <ul className="space-y-3">
               <li>
@@ -123,7 +123,7 @@ export default function Footer() {
           className="border-t border-[var(--border)] pt-8"
         >
           <p className="text-[var(--text-muted)] text-xs font-light tracking-widest text-center">
-            Crafted with intention. Built to last.
+            Clarity first. Then everything else.
           </p>
         </motion.div>
       </div>
