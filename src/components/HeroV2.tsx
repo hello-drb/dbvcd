@@ -19,9 +19,9 @@ export default function HeroV2() {
           </p>
 
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-serif font-light leading-tight tracking-tight text-[var(--text-primary)]">
-            Your work has{" "}
-            <span className="text-[var(--accent-gold)]">outgrown</span>{" "}
-            how the world sees it.
+            I build{" "}
+            <span className="text-[var(--accent-gold)]">worlds</span>{" "}
+            for artists and brands.
           </h1>
 
           <motion.p
@@ -30,7 +30,7 @@ export default function HeroV2() {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="text-lg sm:text-xl text-[var(--text-secondary)] font-light max-w-2xl mx-auto leading-relaxed"
           >
-            You&apos;ve put in the work. The expertise, the clients, the reputation. Now it&apos;s time for the world to see it clearly.
+            Creative direction, photography, brand strategy, and music production. New York City.
           </motion.p>
         </motion.div>
 
