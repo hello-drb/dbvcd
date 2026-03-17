@@ -40,8 +40,8 @@ export default function Hero() {
           className="w-full h-full object-cover object-center"
         />
         {/* Gradient overlays for text readability */}
-        <div className="absolute inset-0 bg-gradient-to-r from-[--bg-primary]/95 via-[--bg-primary]/70 to-[--bg-primary]/30" />
-        <div className="absolute inset-0 bg-gradient-to-t from-[--bg-primary]/80 via-transparent to-[--bg-primary]/20" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[var(--bg-primary)]/95 via-[var(--bg-primary)]/70 to-[var(--bg-primary)]/30" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[var(--bg-primary)]/80 via-transparent to-[var(--bg-primary)]/20" />
       </div>
 
       <div className="relative z-10 w-full max-w-6xl mx-auto px-6 sm:px-8 lg:px-12">
@@ -76,7 +76,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-lg sm:text-xl md:text-2xl font-light leading-relaxed tracking-wide text-[--accent-gold]"
+            className="text-lg sm:text-xl md:text-2xl font-light leading-relaxed tracking-wide text-[var(--accent-gold)]"
           >
             Now let&apos;s build its world.
           </motion.h1>
@@ -89,7 +89,7 @@ export default function Hero() {
           className="flex justify-start pt-24"
         >
           <svg
-            className="w-5 h-5 text-[--accent-gold] opacity-60"
+            className="w-5 h-5 text-[var(--accent-gold)] opacity-60"
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"

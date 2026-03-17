@@ -12,7 +12,7 @@ import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
-    <main className="w-full bg-[--bg-primary] text-[--text-primary]">
+    <main className="w-full bg-[var(--bg-primary)] text-[var(--text-primary)]">
       <Nav />
       <Hero />
       <TheWork />

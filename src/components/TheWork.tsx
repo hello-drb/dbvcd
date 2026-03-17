@@ -6,7 +6,7 @@ import { IMAGES } from "@/lib/images";
 
 export default function TheWork() {
   return (
-    <section className="relative w-full py-28 sm:py-40 px-6 sm:px-8 bg-[--bg-primary]">
+    <section className="relative w-full py-28 sm:py-40 px-6 sm:px-8 bg-[var(--bg-primary)]">
       <div className="max-w-5xl mx-auto">
         <ScrollReveal direction="up">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-20 items-center">
@@ -14,9 +14,9 @@ export default function TheWork() {
             <div className="space-y-10">
               <div>
                 <div className="section-number">(01) The Work</div>
-                <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif font-light tracking-tight text-[--text-primary] mb-6">
+                <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif font-light tracking-tight text-[var(--text-primary)] mb-6">
                   Creative direction, brand strategy, and the
-                  <span className="text-[--accent-gold]"> visual world</span> around it.
+                  <span className="text-[var(--accent-gold)]"> visual world</span> around it.
                 </h2>
                 <div className="accent-divider" />
               </div>
@@ -26,7 +26,7 @@ export default function TheWork() {
                 whileInView={{ opacity: 1 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
                 viewport={{ once: true }}
-                className="space-y-5 text-[--text-secondary] text-lg leading-relaxed font-light"
+                className="space-y-5 text-[var(--text-secondary)] text-lg leading-relaxed font-light"
               >
                 <p>
                   I&apos;m a creative director, musician, photographer, and producer based in New York. I work with
@@ -42,20 +42,20 @@ export default function TheWork() {
                 </p>
 
                 <div className="flex flex-col gap-3 pt-4">
-                  <a href="https://drewimages.studio" target="_blank" rel="noopener noreferrer" className="text-[--text-primary] hover:text-[--accent-gold] transition-colors group">
-                    <span className="text-[--accent-gold] mr-2">&rarr;</span>
+                  <a href="https://drewimages.studio" target="_blank" rel="noopener noreferrer" className="text-[var(--text-primary)] hover:text-[var(--accent-gold)] transition-colors group">
+                    <span className="text-[var(--accent-gold)] mr-2">&rarr;</span>
                     DrewImages.Studio
-                    <span className="text-[--text-muted] ml-2 text-sm">Creative direction & photography</span>
+                    <span className="text-[var(--text-muted)] ml-2 text-sm">Creative direction & photography</span>
                   </a>
-                  <a href="https://silverrushmedia.com" target="_blank" rel="noopener noreferrer" className="text-[--text-primary] hover:text-[--accent-gold] transition-colors group">
-                    <span className="text-[--accent-gold] mr-2">&rarr;</span>
+                  <a href="https://silverrushmedia.com" target="_blank" rel="noopener noreferrer" className="text-[var(--text-primary)] hover:text-[var(--accent-gold)] transition-colors group">
+                    <span className="text-[var(--accent-gold)] mr-2">&rarr;</span>
                     Silver Rush Media
-                    <span className="text-[--text-muted] ml-2 text-sm">Brand strategy & websites</span>
+                    <span className="text-[var(--text-muted)] ml-2 text-sm">Brand strategy & websites</span>
                   </a>
-                  <a href="https://suddenflightrecords.com" target="_blank" rel="noopener noreferrer" className="text-[--text-primary] hover:text-[--accent-gold] transition-colors group">
-                    <span className="text-[--accent-gold] mr-2">&rarr;</span>
+                  <a href="https://suddenflightrecords.com" target="_blank" rel="noopener noreferrer" className="text-[var(--text-primary)] hover:text-[var(--accent-gold)] transition-colors group">
+                    <span className="text-[var(--accent-gold)] mr-2">&rarr;</span>
                     Sudden Flight Records
-                    <span className="text-[--text-muted] ml-2 text-sm">Music production & label services</span>
+                    <span className="text-[var(--text-muted)] ml-2 text-sm">Music production & label services</span>
                   </a>
                 </div>
               </motion.div>
@@ -72,7 +72,7 @@ export default function TheWork() {
               <div className="grid grid-cols-2 gap-3">
                 <div className="space-y-3">
                   <div className="rounded-lg overflow-hidden aspect-[3/4]">
-                    <img src={IMAGES.CYRILLE} alt="Cyrille Aim&eacute;e" className="w-full h-full object-cover" loading="lazy" />
+                    <img src={IMAGES.CYRILLE} alt="Cyrille Aimée" className="w-full h-full object-cover" loading="lazy" />
                   </div>
                   <div className="rounded-lg overflow-hidden aspect-square">
                     <img src={IMAGES.SASHA_ONO} alt="Sasha Ono" className="w-full h-full object-cover" loading="lazy" />

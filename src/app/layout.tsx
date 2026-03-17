@@ -17,11 +17,11 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Drew Bordeaux \u2014 Creative Director",
+  title: "Drew Bordeaux — Creative Director",
   description:
     "Creative direction for artists, brands, and the stories between. Photography, production, and hybrid filmmaking.",
   openGraph: {
-    title: "Drew Bordeaux \u2014 Creative Director",
+    title: "Drew Bordeaux — Creative Director",
     description:
       "Creative direction for artists, brands, and the stories between.",
     type: "website",

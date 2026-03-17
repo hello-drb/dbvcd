@@ -43,7 +43,7 @@ export default function Testimonial() {
   }, []);
 
   return (
-    <section className="relative w-full py-24 sm:py-32 px-6 sm:px-8 bg-[--bg-elevated]">
+    <section className="relative w-full py-24 sm:py-32 px-6 sm:px-8 bg-[var(--bg-elevated)]">
       <div className="max-w-3xl mx-auto">
         <div className="relative">
           {/* Gold quotation mark */}
@@ -52,7 +52,7 @@ export default function Testimonial() {
             whileInView={{ opacity: 1 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="text-7xl sm:text-8xl text-[--accent-gold] leading-none mb-8 font-serif opacity-30"
+            className="text-7xl sm:text-8xl text-[var(--accent-gold)] leading-none mb-8 font-serif opacity-30"
           >
             &ldquo;
           </motion.div>
@@ -68,10 +68,10 @@ export default function Testimonial() {
                 className="space-y-6"
               >
                 <blockquote>
-                  <p className="text-2xl sm:text-3xl md:text-4xl font-serif italic font-light leading-snug text-[--text-primary]">
+                  <p className="text-2xl sm:text-3xl md:text-4xl font-serif italic font-light leading-snug text-[var(--text-primary)]">
                     {testimonials[currentIndex].quote}
                   </p>
-                  <p className="text-lg sm:text-xl font-serif italic font-light leading-snug text-[--text-secondary] mt-4">
+                  <p className="text-lg sm:text-xl font-serif italic font-light leading-snug text-[var(--text-secondary)] mt-4">
                     {testimonials[currentIndex].detail}
                   </p>
                 </blockquote>
@@ -80,10 +80,10 @@ export default function Testimonial() {
                   <img
                     src={testimonials[currentIndex].avatar}
                     alt={testimonials[currentIndex].author}
-                    className="w-12 h-12 rounded-full object-cover border border-[--border]"
+                    className="w-12 h-12 rounded-full object-cover border border-[var(--border)]"
                     loading="lazy"
                   />
-                  <p className="text-[--text-muted] font-light tracking-widest text-sm uppercase">
+                  <p className="text-[var(--text-muted)] font-light tracking-widest text-sm uppercase">
                     {testimonials[currentIndex].author}
                   </p>
                 </div>
@@ -99,8 +99,8 @@ export default function Testimonial() {
                 onClick={() => setCurrentIndex(index)}
                 className={`transition-all duration-300 rounded-full ${
                   index === currentIndex
-                    ? "w-8 h-1.5 bg-[--accent-gold]"
-                    : "w-4 h-1.5 bg-[--border] hover:bg-[--border-hover]"
+                    ? "w-8 h-1.5 bg-[var(--accent-gold)]"
+                    : "w-4 h-1.5 bg-[var(--border)] hover:bg-[var(--border-hover)]"
                 }`}
                 aria-label={`Go to testimonial ${index + 1}`}
               />

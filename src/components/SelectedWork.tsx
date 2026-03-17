@@ -25,18 +25,18 @@ function WorkPiece({ name, role, description, image, reversed = false }: WorkPie
           className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
           loading="lazy"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-[--bg-primary]/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[var(--bg-primary)]/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
       </div>
 
       {/* Content */}
       <div className={`py-10 md:py-0 space-y-4 ${reversed ? "md:order-1 md:text-right" : ""}`}>
-        <p className="text-[--accent-gold] text-sm font-light tracking-widest uppercase">
+        <p className="text-[var(--accent-gold)] text-sm font-light tracking-widest uppercase">
           {role}
         </p>
-        <h3 className="text-3xl sm:text-4xl font-serif font-light text-[--text-primary]">
+        <h3 className="text-3xl sm:text-4xl font-serif font-light text-[var(--text-primary)]">
           {name}
         </h3>
-        <p className="text-[--text-secondary] leading-relaxed font-light text-base max-w-md">
+        <p className="text-[var(--text-secondary)] leading-relaxed font-light text-base max-w-md">
           {description}
         </p>
       </div>
@@ -49,26 +49,26 @@ export default function SelectedWork() {
     {
       name: "Nicole Zuraitis",
       role: "Art Direction & Photography",
-      description: "Photography and art direction for Grammy Award\u2013winning vocalist\u2014including album packaging for her latest release. Art director and photographer credit on the project that set the standard for how she presents to the industry.",
+      description: "Photography and art direction for Grammy Award–winning vocalist—including album packaging for her latest release. Art director and photographer credit on the project that set the standard for how she presents to the industry.",
       image: IMAGES.NICOLE_ZURAITIS,
     },
     {
       name: "Jazzmeia Horn",
       role: "Photography",
-      description: "Album cover photography for Grammy-nominated vocalist. Images built to match the depth and ambition of one of jazz\u2019s most dynamic artists.",
+      description: "Album cover photography for Grammy-nominated vocalist. Images built to match the depth and ambition of one of jazz's most dynamic artists.",
       image: IMAGES.JAZZMEIA_HORN,
       reversed: true,
     },
     {
       name: "Becki Davis",
       role: "Album Production",
-      description: "Produced Lost and Found\u2014an album that earned Folk radio play across the country and landed on Top 30 year-end lists. Full production from demo to master.",
+      description: "Produced Lost and Found—an album that earned Folk radio play across the country and landed on Top 30 year-end lists. Full production from demo to master.",
       image: IMAGES.BECKI_DAVIS,
     },
     {
       name: "Jessie Wagner",
       role: "Creative Direction",
-      description: "Full creative direction for Wicked Cool Records recording artist. Album art, press kit, social content, and tour imagery\u2014one cohesive visual world.",
+      description: "Full creative direction for Wicked Cool Records recording artist. Album art, press kit, social content, and tour imagery—one cohesive visual world.",
       image: IMAGES.JESSIE_WAGNER,
       reversed: true,
     },
@@ -88,12 +88,12 @@ export default function SelectedWork() {
   ];
 
   return (
-    <section id="work" className="relative w-full py-28 sm:py-40 px-6 sm:px-8 bg-[--bg-primary]">
+    <section id="work" className="relative w-full py-28 sm:py-40 px-6 sm:px-8 bg-[var(--bg-primary)]">
       <div className="max-w-5xl mx-auto">
         <ScrollReveal direction="up">
           <div className="mb-24">
             <div className="section-number">(03) Selected Work</div>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif font-light tracking-tight text-[--text-primary] mb-6">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif font-light tracking-tight text-[var(--text-primary)] mb-6">
               Selected Work
             </h2>
             <div className="accent-divider" />

@@ -12,14 +12,14 @@ const logos = [
 
 export default function PressLogos() {
   return (
-    <section className="w-full py-16 px-6 sm:px-8 bg-[--bg-primary] border-y border-[--border]">
+    <section className="w-full py-16 px-6 sm:px-8 bg-[var(--bg-primary)] border-y border-[var(--border)]">
       <div className="max-w-4xl mx-auto">
         <motion.p
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="text-center text-[--text-muted] text-xs font-light tracking-widest uppercase mb-10"
+          className="text-center text-[var(--text-muted)] text-xs font-light tracking-widest uppercase mb-10"
         >
           Featured in
         </motion.p>
