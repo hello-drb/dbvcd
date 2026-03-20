@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<meta name="description" content="Drew Bordeaux — Creative direction, brand architecture, and AI-powered creative infrastructure."/>
+<title>Drew Bordeaux — Creative Direction & Brand Architecture</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Young+Serif&family=Instrument+Serif:ital@0;1&family=Archivo:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap" rel="stylesheet"/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react/18.2.0/umd/react.production.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.2.0/umd/react-dom.production.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.23.9/babel.min.js"></script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:#F0E8DA;color:#2A2420;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;overflow-x:hidden}
+::selection{background:#7A3242;color:#F0E8DA}
+::-webkit-scrollbar{width:3px}
+::-webkit-scrollbar-track{background:#1E1B18}
+::-webkit-scrollbar-thumb{background:#7A3242;border-radius:2px}
+
+body::after{
+  content:'';position:fixed;top:-50%;left:-50%;right:-50%;bottom:-50%;width:200%;height:200%;
+  background:transparent url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E") repeat;
+  pointer-events:none;z-index:9999;opacity:0.35;
+  animation:grain 8s steps(10) infinite;
+}
+
+@keyframes grain{0%,100%{transform:translate(0,0)}1%{transform:translate(-25%,-25%)}2%{transform:translate(25%,25%)}}
+
+a,button{text-decoration:none;border:none;background:none;cursor:pointer;color:inherit}
+
+h1,h2,h3,h4,h5,h6{font-family:Young Serif,serif;line-height:1.2}
+h1{font-size:3.75rem}
+h2{font-size:2.5rem}
+h3{font-size:1.5rem}
+
+p{line-height:1.6;font-size:1rem;font-family:Archivo,sans-serif}
+.label{font-size:0.75rem;text-transform:uppercase;letter-spacing:1px;font-weight:500;font-family:Archivo,sans-serif}
+.small-text{font-size:0.875rem;font-family:Archivo,sans-serif;opacity:0.85}
+
+.container{max-width:1200px;margin:0 auto;padding:0 1.5rem}
+
+header{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(240,232,218,0.95);backdrop-filter:blur(10px);border-bottom:1px solid rgba(42,36,32,0.1);padding:1rem 0}
+nav{display:flex;justify-content:space-between;align-items:center;height:60px}
+.logo{font-family:Young Serif,serif;font-size:1.5rem;font-weight:700;letter-spacing:-0.5px}
+nav ul{display:flex;gap:2rem;list-style:none}
+nav a{font-size:0.9rem;color:#7A3242;font-weight:500;transition:all 0.3s ease;position:relative}
+nav a::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:2px;background:#7A3242;transition:width 0.3s ease}
+nav a:hover::after{width:100%}
+
+main{padding-top:60px}
+
+section{padding:6rem 0}
+
+.hero{background:linear-gradient(135deg,#F0E8DA 0%,#E8DFD0 100%);position:relative;overflow:hidden}
+.hero-content{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;padding:4rem 0}
+.hero h1{margin-bottom:1.5rem;color:#2A2420}
+.hero p{margin-bottom:2rem;font-size:1.125rem;color:#5A5047}
+.cta-primary{display:inline-block;padding:1rem 2rem;background:#7A3242;color:#F0E8DA;border-radius:4px;font-weight:600;transition:all 0.3s ease}
+.cta-primary:hover{background:#5A2432;transform:translateY(-2px);box-shadow:0 8px 24px rgba(122,50,66,0.2)}
+
+.hero-image{position:relative;height:400px;border-radius:8px;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,0.1)}
+.hero-image img{width:100%;height:100%;object-fit:cover}
+
+.services{background:#2A2420}
+.services h2{color:#F0E8DA;margin-bottom:3rem;text-align:center}
+.services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem}
+.service-card{background:rgba(240,232,218,0.05);padding:2rem;border-radius:8px;border:1px solid rgba(240,232,218,0.1);transition:all 0.3s ease}
+.service-card:hover{background:rgba(240,232,218,0.1);border-color:#7A3242;transform:translateY(-4px)}
+.service-card h3{color:#F0E8DA;margin-bottom:1rem;font-size:1.5rem}
+.service-card p{color:#B0A89D;font-size:0.95rem}
+.service-card .label{color:#7A3242;margin-bottom:0.5rem}
+
+.portfolio{background:#F0E8DA}
+.portfolio h2{color:#2A2420;margin-bottom:3rem;text-align:center}
+.portfolio-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:2.5rem}
+.portfolio-item{background:white;border-radius:8px;overflow:hidden;box-shadow:0 4px 12px rgba(0,0,0,0.05);transition:all 0.3s ease}
+.portfolio-item:hover{transform:translateY(-8px);box-shadow:0 12px 32px rgba(0,0,0,0.12)}
+.portfolio-item-image{width:100%;height:250px;overflow:hidden;background:#E8DFD0}
+.portfolio-item-image img{width:100%;height:100%;object-fit:cover}
+.portfolio-item-content{padding:1.5rem}
+.portfolio-item h3{color:#2A2420;margin-bottom:0.5rem}
+.portfolio-item .label{color:#7A3242;margin-bottom:1rem}
+.portfolio-item p{color:#5A5047;font-size:0.95rem;margin-bottom:1rem}
+.portfolio-item a{color:#7A3242;font-weight:600;transition:all 0.3s ease;display:inline-flex;align-items:center;gap:0.5rem}
+.portfolio-item a:hover{gap:1rem}
+
+.about{background:#2A2420}
+.about h2{color:#F0E8DA;margin-bottom:2rem}
+.about-content{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start}
+.about-image{border-radius:8px;overflow:hidden;height:400px;box-shadow:0 20px 60px rgba(0,0,0,0.3)}
+.about-image img{width:100%;height:100%;object-fit:cover}
+.about-text p{color:#B0A89D;margin-bottom:1.5rem;line-height:1.8;font-size:1rem}
+.about-text .label{color:#7A3242;margin-bottom:1.5rem;display:block}
+.skills{margin-top:2rem}
+.skills h3{color:#F0E8DA;font-size:1.2rem;margin-bottom:1rem}
+.skill-item{display:flex;align-items:center;margin-bottom:0.8rem;color:#B0A89D}
+.skill-item::before{content:'→';margin-right:0.8rem;color:#7A3242;font-weight:700}
+
+.testimonials{background:#F0E8DA}
+.testimonials h2{color:#2A2420;margin-bottom:3rem;text-align:center}
+.testimonials-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem}
+.testimonial-card{background:white;padding:2rem;border-radius:8px;border-left:4px solid #7A3242;box-shadow:0 4px 12px rgba(0,0,0,0.05);transition:all 0.3s ease}
+.testimonial-card:hover{box-shadow:0 8px 24px rgba(0,0,0,0.1)}
+.testimonial-card p{color:#5A5047;font-style:italic;margin-bottom:1.5rem;line-height:1.8}
+.testimonial-card .author{color:#2A2420;font-weight:600;margin-bottom:0.25rem}
+.testimonial-card .role{color:#7A3242;font-size:0.85rem}
+
+.cta-section{background:linear-gradient(135deg,#7A3242 0%,#5A2432 100%);color:#F0E8DA;text-align:center;padding:4rem 2rem}
+.cta-section h2{color:#F0E8DA;margin-bottom:1.5rem}
+.cta-section p{font-size:1.1rem;margin-bottom:2rem;opacity:0.95}
+.cta-secondary{display:inline-block;padding:1rem 2rem;background:#F0E8DA;color:#7A3242;border-radius:4px;font-weight:600;transition:all 0.3s ease}
+.cta-secondary:hover{background:white;transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,0.2)}
+
+footer{background:#1E1B18;color:#B0A89D;padding:3rem 0;text-align:center;font-size:0.9rem;border-top:1px solid rgba(240,232,218,0.1)}
+footer a{color:#7A3242;transition:all 0.3s ease}
+footer a:hover{color:#F0E8DA}
+
+@media(max-width:768px){
+  h1{font-size:2.5rem}
+  h2{font-size:1.75rem}
+  .hero-content{grid-template-columns:1fr;gap:2rem}
+  .hero-image{height:300px}
+  .services-grid{grid-template-columns:1fr}
+  .portfolio-grid{grid-template-columns:1fr}
+  .about-content{grid-template-columns:1fr}
+  .testimonials-grid{grid-template-columns:1fr}
+  .about-image{height:300px}
+  nav ul{gap:1rem}
+  nav a{font-size:0.8rem}
+  section{padding:3rem 0}
+}
+</style>
+</head>
+<body>
+<header>
+  <nav class="container">
+    <div class="logo">Drew Bordeaux</div>
+    <ul>
+      <li><a href="#work">Work</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <div>
+          <h1>Creative Direction & Brand Architecture</h1>
+          <p>I help forward-thinking brands navigate complexity through strategic design thinking, AI-powered creative infrastructure, and human-centered storytelling.</p>
+          <a href="#contact" class="cta-primary">Start a Project</a>
+        </div>
+        <div class="hero-image">
+          <img src="https://res.cloudinary.com/hello-drb/image/upload/v1739913876/Drew_Bordeaux_Hero_1_wh1ub4.jpg" alt="Drew Bordeaux - Creative Director"/>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="services" id="services">
+    <div class="container">
+      <h2>What I Do</h2>
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="label">Creative Direction</div>
+          <h3>Visual Storytelling</h3>
+          <p>Strategic design thinking that translates complex ideas into compelling visual narratives. I craft cohesive brand experiences across all touchpoints—from digital to physical—ensuring every element reinforces your core message.</p>
+        </div>
+        <div class="service-card">
+          <div class="label">Brand Architecture</div>
+          <h3>System Design</h3>
+          <p>Building scalable brand systems that grow with you. I develop flexible design frameworks, component libraries, and brand guidelines that empower teams to maintain consistency while staying creative and responsive to market changes.</p>
+        </div>
+        <div class="service-card">
+          <div class="label">AI Integration</div>
+          <h3>Creative Infrastructure</h3>
+          <p>Leveraging AI to amplify creative capacity without losing human insight. I design workflows that combine AI tools with strategic thinking, enabling faster iterations, smarter personalization, and data-informed creative decisions.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="portfolio" id="work">
+    <div class="container">
+      <h2>Recent Work</h2>
+      <div class="portfolio-grid">
+        <div class="portfolio-item">
+          <div class="portfolio-item-image">
+            <img src="https://res.cloudinary.com/hello-drb/image/upload/v1739914008/Anthropic_Project_phzbcq.png" alt="Anthropic brand work"/>
+          </div>
+          <div class="portfolio-item-content">
+            <div class="label">AI Research</div>
+            <h3>Anthropic Brand Strategy</h3>
+            <p>Developed comprehensive brand positioning and visual identity system for a leading AI research organization, emphasizing scientific rigor, transparency, and human-centered AI development.</p>
+            <a href="#">View Project →</a>
+          </div>
+        </div>
+        <div class="portfolio-item">
+          <div class="portfolio-item-image">
+            <img src="https://res.cloudinary.com/hello-drb/image/upload/v1739914008/Vercel_Project_ffsrvb.png" alt="Vercel case study"/>
+          </div>
+          <div class="portfolio-item-content">
+            <div class="label">Web Platform</div>
+            <h3>Vercel Creative Infrastructure</h3>
+            <p>Created an AI-integrated design system and creative operations framework that helped Vercel's marketing team move faster without sacrificing quality or brand consistency.</p>
+            <a href="#">View Project →</a>
+          </div>
+        </div>
+        <div class="portfolio-item">
+          <div class="portfolio-item-image">
+            <img src="https://res.cloudinary.com/hello-drb/image/upload/v1739914008/ElevenLabs_Project_ygx0ks.png" alt="ElevenLabs project"/>
+          </div>
+          <div class="portfolio-item-content">
+            <div class="label">Audio AI</div>
+            <h3>ElevenLabs Brand Evolution</h3>
+            <p>Evolved brand positioning and created visual language for an audio AI platform, helping them communicate their innovation to enterprise and consumer audiences simultaneously.</p>
+            <a href="#">View Project →</a>
+          </div>
+        </div>
+        <div class="portfolio-item">
+          <div class="portfolio-item-image">
+            <img src="https://res.cloudinary.com/hello-drb/image/upload/v1739914009/Slack_Project_k5xfpz.png" alt="Slack platform work"/>
+          </div>
+          <div class="portfolio-item-content">
+            <div class="label">Platform Design</div>
+            <h3>Slack Creative Operations</h3>
+            <p>Built design systems and creative workflows for Slack's marketing organization, enabling faster experimentation and helping them scale creative output across multiple geographies and languages.</p>
+            <a href="#">View Project →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="about" id="about">
+    <div class="container">
+      <h2>About Me</h2>
+      <div class="about-content">
+        <div class="about-image">
+          <img src="https://res.cloudinary.com/hello-drb/image/upload/v1739913876/Drew_Bordeaux_Portrait_wqwz8l.jpg" alt="Drew Bordeaux"/>
+        </div>
+        <div class="about-text">
+          <span class="label">Creative Director & Design Strategist</span>
+          <p>I believe great brands are built on clarity, consistency, and courage. My work sits at the intersection of strategic design thinking, emerging technologies, and human-centered storytelling—helping brands navigate complexity and create meaningful connections with their audiences.</p>
+          <p>Over the past decade, I've partnered with innovative companies across AI, fintech, healthcare, and enterprise software to develop strategic visual identities, scalable design systems, and creative workflows that enable their teams to move faster and stay on-brand.</p>
+          <p>I'm passionate about solving complex design problems, mentoring emerging creatives, and exploring how AI can augment—not replace—human creativity. When I'm not designing, you'll find me reading about brand strategy, experimenting with new tools, or working on side projects that challenge conventional thinking.</p>
+          <div class="skills">
+            <h3>Core Competencies</h3>
+            <div class="skill-item">Visual Identity & Brand Strategy</div>
+            <div class="skill-item">Design Systems & Component Libraries</div>
+            <div class="skill-item">Creative Direction & Art Direction</div>
+            <div class="skill-item">AI-Integrated Creative Workflows</div>
+            <div class="skill-item">Team Leadership & Mentorship</div>
+            <div class="skill-item">Strategic Design Thinking</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="testimonials">
+    <div class="container">
+      <h2>What Clients Say</h2>
+      <div class="testimonials-grid">
+        <div class="testimonial-card">
+          <p>"Drew transformed how we think about brand consistency. His design systems didn't just keep us on-brand—they freed us to innovate faster."</p>
+          <div class="author">Sarah Chen</div>
+          <div class="role">VP Marketing, Growth-Stage Startup</div>
+        </div>
+        <div class="testimonial-card">
+          <p>"Working with Drew on our rebrand was revelatory. He understood not just our visual needs, but the strategic challenges underneath. His thinking elevated everything."</p>
+          <div class="author">Michael Rodriguez</div>
+          <div class="role">Chief Brand Officer, Enterprise Software</div>
+        </div>
+        <div class="testimonial-card">
+          <p>"Drew's ability to bridge creative vision with operational reality is rare. He helped us build creative infrastructure that actually works at scale."</p>
+          <div class="author">Jessica Wong</div>
+          <div class="role">Creative Director, Digital-First Brand</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-section" id="contact">
+    <div class="container">
+      <h2>Let's Work Together</h2>
+      <p>Whether you're building a brand from scratch, evolving an existing identity, or scaling creative operations, I'd love to explore how we can collaborate.</p>
+      <a href="mailto:drew@example.com" class="cta-secondary">Get in Touch</a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container">
+    <p>&copy; 2024 Drew Bordeaux. All rights reserved.</p>
+    <p><a href="#">Privacy</a> · <a href="#">Terms</a> · <a href="#">LinkedIn</a> · <a href="#">Twitter</a></p>
+  </div>
+</footer>
+
+<script type="text/babel">
+const App = () => {
+  return <div></div>;
+};
+
+ReactDOM.createRoot(document.getElementById("root")).render(<App/>);
+</script>
+</body>
+</html>
